@@ -38,7 +38,7 @@ Query.equal('searchTerm', query) // Search for the document with the same query
       COLLECTION_ID,
       ID.unique(),
       {
-        searchTerm: query,
+        searchTerm : query,
         count: 1, // Initialize the search count to 1
         movie_id: movie.id,
         title: movie.title,
@@ -54,3 +54,17 @@ Query.equal('searchTerm', query) // Search for the document with the same query
   // if no document is found
   // create a new document in Appwrite database  -> 1
 }
+
+export const getTrendingMovies = async (): Promise<TrendingMovie[] | undefined> => {
+  try {
+    const result = await database.listDocuments(DATABASE_ID, COLLECTION_ID, [
+      Query.limit(5), // Limit to 10 documents
+      Query.orderDesc('count')
+    ])
+
+    return result.documents  as unknown as TrendingMovie[]
+  } catch (error) {
+    console.log(error)
+    return undefined
+  }
+ }
