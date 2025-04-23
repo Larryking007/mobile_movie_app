@@ -53,7 +53,7 @@ mt-20 mb-5 mx-auto"></Image>
               onPress={() => router.push('/search')}
               placeholder='Search for a movie'
             />
-            if(trendingMovies) {
+            {trendingMovies && (
               <View className="mt-10">
                 <Text className="text-lg text-white
                 font-bold mt-5 mb-3">Latest Movies</Text>
@@ -71,14 +71,12 @@ mt-20 mb-5 mx-auto"></Image>
                     <TrendingCard movie={item}
                       index={index}
                     />
-
                   )}
                   keyExtractor={(item) => item.movie_id.toString()}
                 />
               </View>
-            }
+            )}
             <>
-
               <FlatList
                 data={movies}
                 renderItem={({ item }) => (
@@ -96,13 +94,11 @@ mt-20 mb-5 mx-auto"></Image>
                 }}
                 className="mt-2 pb-32"
                 scrollEnabled={false} />
-
             </>
           </View >
         )
         }
       </ScrollView >
     </View >
-
   );
 }

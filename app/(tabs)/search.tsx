@@ -22,7 +22,6 @@ const Search = () => {
   }), false)
 
   useEffect(() => {
-
     const timeoutId = setTimeout(async () => {
       if (searchQuery.trim()) {
         await loadMovies();
@@ -80,7 +79,6 @@ const Search = () => {
                 size='large'
                 color='#fff'
                 className='my-3' />
-
             )}
             {moviesError && (
               <Text className='text-red-500 px-5 my-3'>

@@ -3,11 +3,9 @@ import './globals.css';
 import { StatusBar } from "react-native";
 
 export default function RootLayout() {
-  return
-  <>
+  return <>
     <StatusBar hidden={true} />
     <Stack>
-
       <Stack.Screen
         name="(tabs)"
         options={{
@@ -18,7 +16,6 @@ export default function RootLayout() {
         options={{
           headerShown: false
         }} />
-
     </Stack>
   </>
 }
