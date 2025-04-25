@@ -64,7 +64,9 @@ mt-20 mb-5 mx-auto"></Image>
                 <FlatList
                   horizontal
                   showsHorizontalScrollIndicator={false}
-                  ItemSeparatorComponent={() => <View />}
+                  ItemSeparatorComponent={() =>
+                    <View className="w-4" />}
+                  className="mb-4 mt-3"
                   data={trendingMovies}
                   renderItem={({
                     item, index }) => (
@@ -72,7 +74,8 @@ mt-20 mb-5 mx-auto"></Image>
                       index={index}
                     />
                   )}
-                  keyExtractor={(item) => item.movie_id.toString()}
+                  keyExtractor={(item) => item
+                    .movie_id.toString()}
                 />
               </View>
             )}
