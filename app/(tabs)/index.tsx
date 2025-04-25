@@ -82,8 +82,9 @@ mt-20 mb-5 mx-auto"></Image>
             <>
               <FlatList
                 data={movies}
-                renderItem={({ item }) => (
+                renderItem={({ item, index }) => (
                   <MovieCard
+                    index={index}
                     {...item}
                   />
                 )}

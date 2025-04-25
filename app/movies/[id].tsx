@@ -76,7 +76,7 @@ const MovieDetails = () => {
           <MovieInfo label='Overview'
             value={movie?.overview} />
           <MovieInfo label='Genres'
-            value={movie?.genres.map(g => g.name).join(' - ') || 'N/A'} />
+            value={movie?.genres.map(g => g.name).join(' • ') || 'N/A'} />
           <MovieInfo label='Status'
             value={movie?.status || 'N/A'} />
           <View className=' flex flex-row
@@ -86,12 +86,12 @@ const MovieDetails = () => {
             <MovieInfo label='Revenue'
               value={`$${Math.round(movie?.revenue) / 1_000_000}`} />
           </View>
+          <MovieInfo label='Tagline'
+            value={movie?.tagline} />
+          <MovieInfo label='Production Companies'
+            value={movie?.production_companies.map(c => c.name).join(' • ') || 'N/A'} />
         </View>
 
-        <MovieInfo label='Tagline'
-          value={movie?.tagline} />
-        <MovieInfo label='Production Companies'
-          value={movie?.production_companies.map(c => c.name).join(' - ') || 'N/A'} />
       </ScrollView>
       <TouchableOpacity className='absolute bottom-5
       left-0 right-0 mx-5 bg-accent rounded-lg py-3.5 flex
